@@ -1,2 +1,2 @@
 # phishing-website_IG
-This website is for school project.The purpose is to make people understand the principles behind phishing websites and how to prevent them.
+This project explores the underlying principles of phishing and provides strategies for prevention.
