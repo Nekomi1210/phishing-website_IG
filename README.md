@@ -1,3 +1,37 @@
-# phishing-website_IG
-This project explores the underlying principles of phishing with fake instagram page
-and provides strategies for prevention.
+# 以 Instagram 為例的網路釣魚原理分析與防範實作
+
+免責聲明
+本專題僅供學術研究與資安教育用途。所有實驗均在虛擬環境下進行，嚴禁將相關技術用於非法獲取他人資訊。
+
+專題目標
+本專題透過克隆 Instagram 登入頁面，模擬攻擊者獲取使用者個資的過程。旨在探討釣魚網站的運作機制，並總結出有效的防禦手段，提升資安意識。
+
+技術架構
+前端： HTML5, CSS3 (模擬官方登入介面)
+
+後端： Python Flask (處理資料攔截與紀錄)
+
+工具： VS Code, SingleFile (網頁擷取), ngrok (模擬外網存取)
+
+實作摘要
+網頁克隆： 擷取目標網站前端代碼，並移除 JavaScript 驗證以回歸純表單傳輸
+
+攔截點注入： 修改 HTML 表單屬性，將帳號與密碼欄位指向攻擊者控制的伺服器
+
+後端開發： 實作 Flask 接收端，將捕獲的資料寫入 stolen_creds.txt 並將受害者重新導向至真官網以降低懷疑
+
+實驗結論與防護
+透過實驗發現，攻擊者常利用視覺混淆（如相似網址）進行誘導。建議使用者：
+
+檢查網址列： 仔細辨識是否有拼字錯誤或異常域名
+
+查看 SSL 憑證： 點擊瀏覽器鎖頭確認憑證發放來源
+
+強制二階驗證： 即使密碼遭攔截，2FA 仍能提供關鍵保護
+
+檔案結構
+
+login/: 偽造之登入頁面(I以小寫L代替模擬真實偽造網站)
+
+app.py: 暫定為攔截資料程式
+
