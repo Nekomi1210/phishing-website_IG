@@ -33,9 +33,9 @@
 現代瀏覽器對於未配置 SSL 憑證（HTTP 而非 HTTPS）的頁面會噴出「不安全」警告。使用者不應在出現此類警告的頁面輸入任何敏感資訊。
 
 ## 檔案結構
-original.html:原始網頁
 
-login.html: 偽造之登入頁面
+templates: flask資料夾
+ login.html: 偽造之登入頁面
 
 app.py: 暫定為攔截資料程式
 
