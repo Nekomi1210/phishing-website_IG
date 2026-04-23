@@ -34,8 +34,9 @@
 
 ## 檔案結構
 
-templates: flask資料夾
- login.html: 偽造之登入頁面
+templates: flask範本之資料夾
+ 
+login.html: 偽造之登入頁面
 
 app.py: 暫定為攔截資料程式
 
